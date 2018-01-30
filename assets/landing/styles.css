@@ -1,0 +1,99 @@
+@font-face {
+    font-family: Monserrat;
+    src: url('../../assets/Montserrat-Light.otf');
+    font-weight: 300;
+}
+@font-face {
+    font-family: Monserrat;
+    src: url('../../assets/fonts/Montserrat-Regular.otf');
+    font-weight: 400;
+}
+@font-face {
+    font-family: Monserrat;
+    src: url('../../assets/Montserrat-SemiBold.otf');
+    font-weight: 500;
+}
+@font-face {
+    font-family: Monserrat;
+    src: url('../../assets/Montserrat-Bold.otf');
+    font-weight: 600;
+} 
+body {
+    font-family: Monserrat, sans-serif;
+    -webkit-font-smoothing: antialiased!important;
+    background:#000;
+}
+.image-bg-fixed-height h1 {
+    font-size:52px;
+    padding-bottom:30px;
+    font-weight:400 !important;
+}
+.image-bg-fixed-height h1 span {
+    font-size:54px;
+    border-bottom:4px solid #fff;
+    padding-bottom:3px;
+}
+.btn-default {
+    background:none !important;
+    border:none;
+    color:#777;
+    padding-top:12px;   
+    outline:none !important;
+}
+.image-bg-fluid-height,
+.image-bg-fixed-height {
+    text-align: center;
+    color:#fff;
+}
+.image-bg-fixed-height {
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.3)), url("bg-header.jpg");
+    background-image: -moz-linear-gradient(top, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.3)), url("bg-header.jpg");
+    background-image: -o-linear-gradient(top, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.3)), url("bg-header.jpg");
+    background-image: -ms-linear-gradient(top, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.3)), url("bg-header.jpg");
+    background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.5)), to(rgba(0, 0, 0, 0.3))), url("bg-header.jpg");
+    background-image: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.1)), url("bg-header.jpg");
+    background-size: cover; /* or contain depending on what you want */
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-position: 100% 20%;
+    height: 100vh;
+}
+.intro-container {
+    position: absolute;
+    bottom: 0px;
+    right: 200px;
+}
+.form-container {
+    position: relative;
+    top: 9%;
+    left: 12%;
+    width: 35%;
+    float: left;
+}
+.form-container .well {
+    color:#333;
+    border-radius:10px;
+    overflow:auto;
+}
+.form-title {
+    float:left;
+    padding-bottom:13px;
+    font-size:18px;
+}
+.counter {
+    position: absolute;
+    bottom: 0px;
+    right: 10px;
+    font-size: 30px;
+    font-weight: 400;
+}
+.counter span {
+    display:block;
+    font-size: 25px;
+    font-weight: 300;
+    position: relative;
+    bottom: 10px;
+}
+.img-circle {
+    padding:0px;
+}

@@ -1,0 +1,317 @@
+.image-bg-fixed-height {
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.6)), url("../images/bg-header.jpg");
+  background-image: -moz-linear-gradient(top, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.6)), url("../images/bg-header.jpg");
+  background-image: -o-linear-gradient(top, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.6)), url("../images/bg-header.jpg");
+  background-image: -ms-linear-gradient(top, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.6)), url("../images/bg-header.jpg");
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.4)), to(rgba(0, 0, 0, 0.4))), url("../images/bg-header.jpg");
+  background-image: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.3)), url("../images/bg-header.jpg");
+  background-size: cover; /* or contain depending on what you want */
+  background-position: center center;
+  background-repeat: no-repeat;
+  text-align: center;
+  margin: auto;
+  padding:  0;
+  background-position: 55% 60%;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+}
+.people-list {
+  width:100%;
+}
+.people-list-item {
+  width: 33.3%;
+  height: 125px;
+  margin: 0px;
+  z-index: 0;
+  position: relative;
+  float:left;
+}
+.people-list-avatar {
+  height: 100%;
+  width: 100%;
+  z-index: 0;
+  background-size: cover;
+}
+.people-list-info {
+  position: relative;
+  left: 7px;
+  bottom: 26px;
+  font-size: 1.0em;
+  color: #fff;
+  font-weight: 400;
+  z-index: 2;
+}
+.online-status {
+  display: inline-block;
+  z-index: 2;
+  box-sizing: content-box;
+  width: 8px;
+  height: 8px;
+  margin-left: 5px;
+  border-radius: 100%;
+  vertical-align: middle;
+}
+.online {
+  background-color: #47D282;
+}
+.offline {
+  background-color: #D9D9D9;
+}
+.profile-top {
+  height: 300px;
+  width: 100%;
+}
+.profile-photo {
+  height: 300px;
+  width: 100%;
+  background-size: cover;
+}
+.profile-info {
+  position: relative;
+  bottom: 35px;
+  left: 15px;
+  font-size: 1.7em;
+  color: #FFF;
+  font-weight: 300;
+  width: 200px;
+}
+.profile-content .profile-section {
+  padding: 15px;
+  padding-top: 0px;
+  border-bottom: 1px solid #EEE;
+}
+.profile-content h2 {
+  font-size: 1.4em;
+  font-weight: 500;
+  padding-top: 10px;
+}
+.profile-content p {
+  color: #66615b;
+  font-weight: 400;
+  padding: 0px;
+}
+.profile-friend {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  margin-right: 3px;
+}
+.table-border td {
+  border-top: 1px solid #EEE;
+  padding: 10px;
+}
+.filter-button {
+  position: relative;
+  right: 90px;
+}
+.filter-button {
+  position: absolute;
+  top: 0px;
+  left: 87.5%;
+  float:right;
+  display: inline-block;
+  width: 27px;
+  height: auto;
+  margin-top: 12px;
+}
+.filter-button .navbar-button-icon div {
+  font-size: 0.8em;
+}
+.filter-container {
+  padding-top:15px;
+}
+.interest-item {
+  display: inline;
+  background: #66615B;
+  margin: 2px;
+  padding: 3px 7px;
+  font-size: 10px;
+  color: #FFF;
+  border-radius: 10px;
+}
+.sidebar-user-photo {
+  height: 55px;
+  width: 55px;
+  border-radius: 50%;
+  float:left;
+}
+.sidebar-user-name {
+  float:left;
+  position: relative;
+  left: 15px;
+  bottom: 5px;
+  color: #66615B;
+}
+.sidebar-user-credits {
+  position: relative;
+  top:30px;
+  right: 34%;
+  color: #66615B;
+}
+.grid-main {
+  padding: 0px !important;
+}
+.visitors-list {
+  padding: 15px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+.visitor {
+  display: inline-block;
+  margin-right: 10px;
+  text-align: center;
+}
+.visitor-photo {
+  height: 65px;
+  width: 65px;
+  border-radius: 50%;
+}
+.visitor-info {
+  font-size: 13px;
+  padding-top: 3px;
+}
+.encounters-controls {
+  text-align: center;
+  margin: 0 auto;
+  float: none;
+  position: relative;
+  bottom: 90px;
+  z-index: 2;
+}
+.encounter-button {
+  display:inline;
+  border-radius: 50%;
+  height: 75px;
+  width: 75px;
+  font-size: 3em;
+  margin-right: 15px;
+  outline: none;
+  white-space: normal;
+}
+.btn-like {
+  background-color: transparent !important;
+  border: 3px solid #FF8F5E !important;
+  color: #FF8F5E;
+}
+.btn-like-fill,.btn-like:hover {
+  background-color: #FF8F5E !important;
+  border: 3px solid #FF8F5E !important;
+  color: #FFF;
+}
+.btn-dislike {
+  background-color: transparent !important;
+  border: 3px solid #FFF !important;
+  color: #FFF;
+}
+.btn-dislike-fill, .btn-dislike:hover {
+  background-color: #FFF !important;
+  border: 3px solid #FFF !important;
+  color: #FFF;
+}
+.encounters-info {
+  padding-left: 10px;
+  padding-bottom: 5px;
+  padding-top: 5px;
+  position: relative;
+  bottom: 76px;
+}
+.encounter-sub-title {
+  font-size: 1.4em;
+  font-weight: 400;
+  padding-bottom: 5px;
+}
+.encounter-username {
+  font-size: 1.7em;
+  font-weight: 400;
+}
+.encounter-section {
+  padding-top: 5px;
+  padding-bottom: 15px;
+  padding-left: 10px;
+  border-top: 1px solid #EEE;
+  position: relative;
+  bottom: 76px;
+}
+.sticker-chat {
+  height: 70px;
+  width: 70px;
+}
+.text-white {
+  color: #FFF !important;
+}
+.gift-selection {
+  padding-top: 10px;
+  position: relative;
+  left: 10px;
+}
+.gift-image {
+  height: 75px;
+  width: 75px;
+  padding: 5px;
+}
+.gift-image:hover {
+  background:#eee;
+}
+.gift-image-small {
+  height: 55px;
+  width: 55px;
+  padding: 5px;
+}
+.verified-badge {
+  color: #68B3C8;
+  font-size: 0.8em;
+  margin-right: 3px;
+  margin-left: 3px;
+}
+.vip-badge {
+  color: #F1C40F;
+  font-size: 0.7em;
+}
+.page-error {
+  text-align: center;
+  color: #999;
+  position: absolute;
+  top:40px;
+  left: 25%;
+}
+.page-error img {
+  margin: 0 auto;
+  float: none;
+  display: block;
+  padding-top: 50px;
+}
+.settings-form {
+  padding-top: 20px;
+}
+.message-user {
+  position: relative;
+  bottom: 2px;
+}
+.message-user div {
+  font-size:30px;
+}
+.photo-upload-area {
+  position: absolute;
+  top:30%;
+  left:14%;
+  width: 300px;
+  text-align: center;
+}
+.photo-upload-area input {
+  position: relative;
+  top:30px;
+}
+.photo-upload-select {
+  font-size:20px;
+  position: relative;
+  bottom: 30px;
+}
+#photo_file {
+  position:absolute;
+  opacity:0;
+  -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  filter: alpha(opacity=0); 
+}
