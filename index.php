@@ -164,7 +164,7 @@ $ad = $ads->fetch_object();
 <head>
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <meta charset="utf-8">
-  <title><?php echo $site_name?> - Online Dating Community</title>
+  <title><?php echo $site_name?></title>
   <meta name="keywords" content="" />
   <meta name="description" content="" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
@@ -190,7 +190,9 @@ $ad = $ads->fetch_object();
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="index.php"><img src="<?=$system->getDomain()?>/img/logo-small.png"></a>
+          <!-- *
+            <a class="navbar-brand" href="index.php"><img src="<?=$system->getDomain()?>/img/logo-small.png"></a>
+          * -->  
         </div>
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -231,20 +233,23 @@ $ad = $ads->fetch_object();
       </div>
       <!-- /.container -->
     </nav>
-
+    <!-- *
     <div class="intro-container">
       <?php
-      while($user = $users->fetch_object()) {
+      /*while($user = $users->fetch_object()) {
         echo '<img src="'.$system->getProfilePicture($user).'" class="img-circle" style="height:50px!important;width:50px!important;margin:10px;">';
-      }
+      }*/
       ?>
     </div>
+    -->
 
     <div class="form-container">
-      <h1><?=$lang['index_1']?></h1>
+      <!-- *
+      <h1><?/*=$lang['index_1']*/?></h1>
       <form action="fb-login.php" method="post">
         <button type="submit" name="fb-login" class="btn btn-subsection btn-social btn-lg btn-block btn-facebook btn-fill" style="text-align:left;"><i class="icon icon-facebook" style="font-size:21px;"></i><?=$lang['Log_In_With_Facebook']?></button> <br>
       </form>
+      * -->
       <div class="well">
         <?php if(!isset($_GET['login'])) { ?>
         <div class="form-title"><?=$lang['index_2']?></div>
@@ -278,7 +283,7 @@ $ad = $ads->fetch_object();
         <? } ?>
       </div>
     </div>
-    <div class="counter"> <?=number_format($users_count->num_rows)?> <span>users</span> </div>
+    <!-- * <div class="counter"> <? /* number_format($users_count->num_rows) */ ?> <span>users</span> </div>* -->
   </header>
   <!-- /.container -->
   <script src="<?=$system->getDomain()?>/assets/js/jquery-1.10.2.js"></script>

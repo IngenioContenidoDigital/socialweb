@@ -117,7 +117,7 @@
 											?>
 										</select>
 									</div>
-									<div class="form-group">
+									<!-- <div class="form-group">
 										<label><?=$lang['Instagram_Username']?></label>
 										<div class="input-group">
 											<input type="text" name="instagram_username" value="<?=$user->instagram_username?>" class="form-control">
@@ -126,7 +126,7 @@
 											</div>
 										</div>
 										<small class="help-block text-muted"><?=$lang['Instagram_Tab_Description']?></small>
-									</div>
+									</div> -->
 									<button type="submit" name="save_2" class="btn btn-theme"> <?=$lang['Save']?> </button>
 								</form>
 							</div>

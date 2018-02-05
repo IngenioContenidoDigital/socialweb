@@ -131,7 +131,7 @@ if(empty($last_chatted)) {
                 </div>
             </a>
             <ul class="dropdown-menu dropdown-menu-right">
-                <li><a href="<?=$system->getDomain()?>/user/<?=$user->id?>">Me</a></li>
+                <li><a href="<?=$system->getDomain()?>/user/<?=$user->id?>"><?=$lang['Me']?></a></li>
                 <li><a href="<?=$system->getDomain()?>/likes"><?=$lang['Profile_Likes']?></a></li>
                 <li><a href="<?=$system->getDomain()?>/visitors"><?=$lang['Profile_Visitors']?></a></li>
                 <li><a href="<?=$system->getDomain()?>/settings"><?=$lang['Settings']?></a></li>

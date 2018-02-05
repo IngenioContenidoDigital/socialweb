@@ -98,14 +98,14 @@
                            <div class="form-group">
                             <label class="font600">Facebook App ID</label>
                             <input type="text" name="fb_app_id" value="<?php echo $fb_app_id?>" class="form-control">
-                        </div> 
-                        <div class="form-group">
-                            <label class="font600">Facebook App Secret Key</label>
-                            <input type="text" name="fb_secret_key" value="<?php echo $fb_secret_key?>" class="form-control">
-                        </div>   
+                           </div> 
+                           <div class="form-group">
+                                <label class="font600">Facebook App Secret Key</label>
+                                <input type="text" name="fb_secret_key" value="<?php echo $fb_secret_key?>" class="form-control">
+                           </div>   
+                        </div>
                     </div>
-                </div>
-                <input type="submit" name="save" class="btn btn-theme" value="Save">
+                    <input type="submit" name="save" class="btn btn-theme" value="Save">
             </form>
         </div>
 

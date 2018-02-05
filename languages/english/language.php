@@ -205,7 +205,7 @@ $lang["Encounters"] = "Encounters";
 $lang["Score"] = "Score"; 
 $lang["Score_Details"] = "<b> %d </b> out of <b> %d </b> <br> people rated Hot!"; // don't translate %d, <b> and </b> and <br>
 // Home Page Translations
-$lang["index_1"] = "Meet people <span> nearby </span>"; // don"t translate <span> and </span>
+$lang["index_1"] = "Meet new people"; // don"t translate <span> and </span>
 $lang["index_2"] = "Create account";
 $lang["index_3"] = "Login";
 $lang["index_4"] = "Welcome back";
@@ -253,3 +253,4 @@ $lang["Verify_Account_Content"] = "Click %s to verify your account";
 $lang["Invalid_Credentials"] = "Invalid Credentials";
 $lang["Verify_Email_Help"] = "We have sent an email to <b> %s </b> <br> Follow the instructions in the email to verify your account"; // don"t translate %s
 $lang["Resend_Email"] = "Resend email";
+$lang["Me"] = "My Profile";

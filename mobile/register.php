@@ -76,7 +76,7 @@ if(isset($_POST['register'])) {
           </div>
         </div>
         <div class="body padding">
-          <div class="logo-login"></div>
+          <!-- * <div class="logo-login"></div> * -->
           <div class="bottom-section padding">
             <div class="w-form">
               <form action="" method="post">

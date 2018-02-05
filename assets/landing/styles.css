@@ -24,8 +24,8 @@ body {
     background:#000;
 }
 .image-bg-fixed-height h1 {
-    font-size:52px;
-    padding-bottom:30px;
+    font-size:40px;
+    padding-bottom:15px;
     font-weight:400 !important;
 }
 .image-bg-fixed-height h1 span {
@@ -65,7 +65,7 @@ body {
 }
 .form-container {
     position: relative;
-    top: 9%;
+    top: 0%;
     left: 12%;
     width: 35%;
     float: left;
