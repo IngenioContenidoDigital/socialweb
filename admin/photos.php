@@ -5,6 +5,7 @@ session_start();
 require('../core/config.php');
 require('../core/auth.php');
 require('../core/system.php');
+require('../core/image.php');
 $auth = new Auth;
 $system = new System;
 
@@ -19,6 +20,60 @@ $user = $system->getUserInfo($_SESSION['user_id']);
 if(!$auth->isLogged() || $user->is_admin != 1) {
 	header('Location: index.php');
 	exit;
+}
+
+$success=false;
+if($_SERVER['REQUEST_METHOD'] == 'POST'){
+    $user = $_POST['user'];
+    $time = time();
+    $error_msg="";
+    $error = false;
+
+if($_FILES['photo_file']['name']) {
+    $extension = strtolower(end(explode('.', $_FILES['photo_file']['name'])));
+    if($extension == 'png' || $extension == 'jpg' || $extension == 'jpeg') {
+      if(!$_FILES['photo_file']['error']) {
+        $new_file_name = md5(mt_rand()).$_FILES['photo_file']['name'];
+        if($_FILES['photo_file']['size'] > (1024000)) {
+          $valid_file = false;
+          $error_msg = 'Oops! One of the photos you uploaded is too large';
+          $success = false;
+        } else {
+          $valid_file = true;
+        }
+        if($valid_file) {
+          move_uploaded_file($_FILES['photo_file']['tmp_name'], '../uploads/'.$new_file_name);
+          $resize = new ResizeImage('../uploads/'.$new_file_name);
+          $resize->resizeTo(640, 640);
+          $resize->saveImage('/uploads/'.$new_file_name);
+          $uploaded = true;
+          
+            $sql="INSERT INTO uploaded_photos "
+                    . "(user_id, path, is_instagram, time) "
+                    . "VALUES ('$user','$new_file_name', 0 ,'$time')";
+            $db->query($sql);
+            $db->query("UPDATE users SET uploaded_photos=uploaded_photos+1 WHERE id='".$user."'");
+        }
+      }else {
+        $error_msg = 'Error occured:  '.$_FILES['photo_file']['error'];
+        $success = false;
+      }
+    } 
+}
+    $success = true;
+}
+
+if ($_SERVER['REQUEST_METHOD'] == 'POST'){
+    echo '<br>
+    <div class="row">
+        <div class="col-lg-12">
+        <div class="container">';
+    if($success){        
+        echo '<div class="alert alert-success">Image uploaded succefully</div>';
+    }else{
+        echo '<div class="alert alert-danger">'.$error_msg.'</div>';
+    }   
+    echo '</div></div></div>';
 }
 
 if(isset($_GET['delete']) && isset($_GET['delid'])) {

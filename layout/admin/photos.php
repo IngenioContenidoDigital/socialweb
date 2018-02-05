@@ -2,7 +2,36 @@
 
   <!-- Start body content -->
   <div class="body-content animated fadeIn">
-
+    <div class="row">
+        <div class="col-md-5 pull-left">
+            <h4>Upload picture to a user</h4>
+            <form action="" class="form-group" method="post" enctype="multipart/form-data">
+                <div class="container">
+                    <div class="row">
+                <div class="col-lg-5">
+                    <label for="photo_file"><?=$lang['picture_to_upload']?></label>
+                    <input name="photo_file" type="file" class="form-control" required>
+                </div>
+                <div class="col-lg-5">
+                <label for="user"><?=$lang['user_to_assign']?></label>
+                <select name="user" class="form-control" required>
+                    <?php
+                        $system->domain = $domain;
+                        $system->db = $db;
+                        $users=$db->query("SELECT DISTINCT id, full_name FROM users;");
+                        foreach ($users as $row){
+                          echo '<option value="'.$row['id'].'">'.$row['full_name'].'</option>'  ;
+                        };
+                    ?>
+                </select>
+                </div>
+                </div>
+                    <br>
+                </div>
+                <button type="submit" name="save" class="btn btn-theme"><?=$lang['Upload']?></button>
+            </form>
+        </div>
+    </div>
     <div class="row">
       <div class="col-lg-12">
         <br>
