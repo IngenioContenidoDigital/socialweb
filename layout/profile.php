@@ -116,11 +116,11 @@
             }
             ?>
           </p>
-          <hr>
+          <!--<hr>
           <h4 class="profile-section-heading"><?=$lang['Friends']?></h4>
           <p class="profile-section">
             <?php
-            if($friends->num_rows >= 1) {
+            /*if($friends->num_rows >= 1) {
               while($friend = $friends->fetch_object()) {
                 $friend_info = $db->query("SELECT id,profile_picture,age,full_name,last_active,city,country FROM users WHERE (id='".$friend->user1."' OR id='".$friend->user2."') AND id != '".$id."'");
                 $friend_info = $friend_info->fetch_object();
@@ -132,24 +132,24 @@
               }
             } else {
               echo $lang['Nothing_To_Show'];
-            }
+            }*/
             ?>
-          </p>
-          <hr>
+          </p>-->
+          <!--<hr>
           <h4 class="profile-section-heading"><?=$lang['Interests']?></h4>
           <p class="profile-section">
             <?php
-            if(!empty($profile->interests)) {
+            /*if(!empty($profile->interests)) {
               $interests = explode(',',$profile->interests);
               foreach($interests as $interest) {
                 echo '<div class="interest-item">'.$interest.'</div>';
               }
             } else {
               echo $lang['Nothing_To_Show'];
-            }
+            }*/
             ?>
-          </p>
-          <hr>
+          </p>-->
+          <!--<hr>-->
           <h4 class="profile-section-heading"><?=$lang['About']?></h4>
           <table class="table table-responsive profile-section" style="max-width:600px;">
             <tr>
@@ -200,10 +200,10 @@
             </div>
             <div class="clearfix"></div>
             <hr>
-            <h4 class="profile-section-heading"><?=$lang['Gifts']?></h4>
+            <!--<h4 class="profile-section-heading"><?=$lang['Gifts']?></h4>
             <p class="profile-section">
               <?php
-              if($gifts->num_rows >= 1) {
+              /*if($gifts->num_rows >= 1) {
                 while($gift = $gifts->fetch_object()) {
                   $sender = $system->getUserInfo($gift->user1);
                   echo '<a href="'.$system->getDomain().'/user/'.$sender->id.'">';
@@ -212,10 +212,10 @@
                 }
               } else {
                 echo sprintf($lang['Has_Not_Received_Gifts'],$system->getFirstName($profile->full_name));
-              }
+              }*/
               ?>
-            </p>
-            <div class="clearfix"></div>
+            </p>-->
+            <!--<div class="clearfix"></div>-->
             <hr>
             <?php
             if($profile->id != $user->id) {
@@ -251,6 +251,7 @@
                 ';
               } elseif($is_friend == 0 && $sent_request == 0) {
                 echo '
+                <p>Date: <input type="date" required id="datepicker" min=""></p>
                 <div id="friendArea" onclick="manageFriendStatus('.$user->id.','.$profile->id.',\'send_request\'); return false;">
                 <a href="#" class="btn btn-default btn-block text-center mb-5">
                 <i class="ti-plus pull-right lh20"></i>

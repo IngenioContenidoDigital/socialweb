@@ -113,10 +113,11 @@ if($user->country == $profile->country) {
   <link rel="stylesheet" type="text/css" href="css/style.css">
   <link rel="stylesheet" type="text/css" href="css/bxslider.css">
   <link rel="stylesheet" type="text/css" href="css/swipebox.min.css">
-  <script src="js/webfont.js"></script>
+  <script src="js/jquery-1.10.2.js"></script>
+  <script src="js/jquery-ui-1.10.4.custom.min.js"></script>
   <script>
-  var base = '<?=$system->getDomain()?>/mobile';
-  var page = 'profile';
+    var base = '<?=$system->getDomain()?>/mobile';
+    var page = 'profile';
   </script>
   <script type="text/javascript" src="js/modernizr.js"></script>
   <link rel="shortcut icon" type="image/x-icon" href="images/favicon.png">

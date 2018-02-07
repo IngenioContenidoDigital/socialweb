@@ -22,7 +22,7 @@ $user = $system->getUserInfo($_SESSION['user_id']);
 $system->setUserActive($user->id);
 
 $settings = $system->getSettings();
-
+/*
 // Filter
 $filter = $db->query("SELECT * FROM filters WHERE user_id='".$user->id."'");
 $num_rows = $filter->num_rows;
@@ -127,8 +127,13 @@ $people = "SELECT * FROM users WHERE id='".$user->last_encounter."'";
 } else {
 $no_encounters = true;
 }
-}
+}*/
 
+$people="SELECT u.id, u2.*
+FROM
+users AS u
+INNER JOIN (SELECT * FROM users) AS u2 ON u2.id=u.last_encounter
+WHERE u.id=".$user->id;
 // Finalize Query
 $people = $db->query($people);
 

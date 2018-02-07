@@ -203,7 +203,7 @@ START @SIDEBAR LEFT
 <li class="<?=$menu['ads']?>">
 <a href="<?=$system->getDomain()?>/admin/ads.php">
 <span class="icon"><i class="fa fa-eye"></i></span>
-<span class="text">Manage Ads</span>
+<span class="text">Manage Encounters</span>
 </a>
 </li>
 
@@ -214,7 +214,7 @@ START @SIDEBAR LEFT
 </a>
 </li>
 
-<li class="submenu <?=$menu['payments']?>">
+<!--<li class="submenu <?=$menu['payments']?>">
 <a href="javascript:void(0);">
 <span class="icon"><i class="fa fa-credit-card"></i></span>
 <span class="text">Payments</span>
@@ -227,21 +227,21 @@ START @SIDEBAR LEFT
 <li class="<?=$menu['upgrades_pricing']?>"><a href="upgrades_pricing.php">Upgrades Pricing</a></li>
 <li class="<?=$menu['vip_pricing']?>"><a href="vip_pricing.php">VIP Account Pricing</a></li>
 </ul>
-</li>
+</li>-->
 
-<li class="<?=$menu['mass_notification']?>">
+<!--<li class="<?=$menu['mass_notification']?>">
 <a href="<?=$system->getDomain()?>/admin/mass_notification.php">
 <span class="icon"><i class="fa fa-globe"></i></span>
 <span class="text">Mass Notification</span>
 </a>
-</li>
+</li>-->
 
-<li class="<?=$menu['layout']?>">
+<!--<li class="<?=$menu['layout']?>">
 <a href="<?=$system->getDomain()?>/admin/design.php">
 <span class="icon"><i class="fa fa-paint-brush"></i></span>
 <span class="text">Design</span>
 </a>
-</li>
+</li>-->
 
 <li class="<?=$menu['email_settings']?>">
 <a href="<?=$system->getDomain()?>/admin/email_settings.php">

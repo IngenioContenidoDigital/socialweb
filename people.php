@@ -24,7 +24,7 @@ $system->setUserActive($user->id);
 $settings = $system->getSettings();
 
 // Filter
-$filter = $db->query("SELECT * FROM filters WHERE user_id='".$user->id."'");
+$filter = $db->query("SELECT * FROM filters WHERE user_id!='".$user->id."'");
 $num_rows = $filter->num_rows;
 if($num_rows >= 1) {
 	$filter = $filter->fetch_object();
@@ -131,7 +131,7 @@ switch ($filter->order_by) {
 }
 
 
-	if($filter->location_dating == 1) {
+    if($filter->location_dating == 1) {
 	$people = "
 	SELECT *,
     3956 * 2 * ASIN(SQRT( POWER(SIN((".$user->latitude." - latitude) * pi()/180 / 2), 2) + COS(".$user->latitude." * pi()/180) * COS(latitude * pi()/180) *

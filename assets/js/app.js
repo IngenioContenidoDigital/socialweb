@@ -1,4 +1,18 @@
-$(document).ready(function() {
+$(document)[0].oncontextmenu = function() { return false; }
+
+$(document).mousedown(function(e) {
+    if( e.button == 2) {
+        return false;
+    } else {
+        return true;
+    }
+});
+
+$("img").on("contextmenu",function(){
+    return false;
+});
+
+$(document).ready(function() {    
 
   if(showControls == true) {
     $('.profile-gallery').bxSlider({
@@ -130,28 +144,34 @@ function photoChange(photo) {
 }
 
 function manageFriendStatus(user1,user2,action) {
-  var friendArea = $("#friendArea");
-  if(action === 'send_request') {
-    $.get(base+'/ajax/manageFriendStatus.php?user1='+user1+'&user2='+user2+'&action=send_request', function(data) {
-      friendArea.html(data);
-      friendArea.attr('onclick',"manageFriendStatus("+user1+","+user2+",'cancel_request')");
-    });
-  } else if(action === 'unfriend') {
-    $.get(base+'/ajax/manageFriendStatus.php?user1='+user1+'&user2='+user2+'&action=unfriend', function(data) {
-      friendArea.html(data);
-      friendArea.attr('onclick',"manageFriendStatus("+user1+","+user2+",'send_request')");
-    });
-  } else if(action === 'accept_request') {
-    $.get(base+'/ajax/manageFriendStatus.php?user1='+user1+'&user2='+user2+'&action=accept_request', function(data) {
-      friendArea.html(data);
-      friendArea.attr('onclick',"manageFriendStatus("+user1+","+user2+",'unfriend')");
-    });
-  } else if(action === 'cancel_request') {
-    $.get(base+'/ajax/manageFriendStatus.php?user1='+user1+'&user2='+user2+'&action=cancel_request', function(data) {
-      friendArea.html(data);
-      friendArea.attr('onclick',"manageFriendStatus("+user1+","+user2+",'send_request')");
-    });
-  }
+    var friendArea = $("#friendArea");
+     if(action === 'send_request') {
+       var s_date = $('#datepicker').val();
+       if(s_date==""){
+         $('#datepicker').css('border','solid red 1px');
+       }else{
+           $('#datepicker').css('border','solid gray 1px');
+         $.get(base+'/ajax/manageFriendStatus.php?user1='+user1+'&user2='+user2+'&action=send_request&encounter='+s_date, function(data) {
+             friendArea.html(data);
+             friendArea.attr('onclick',"manageFriendStatus("+user1+","+user2+",'cancel_request')");
+         }); 
+       }
+     } else if(action === 'unfriend') {
+       $.get(base+'/ajax/manageFriendStatus.php?user1='+user1+'&user2='+user2+'&action=unfriend', function(data) {
+         friendArea.html(data);
+         friendArea.attr('onclick',"manageFriendStatus("+user1+","+user2+",'send_request')");
+       });
+     } else if(action === 'accept_request') {
+       $.get(base+'/ajax/manageFriendStatus.php?user1='+user1+'&user2='+user2+'&action=accept_request', function(data) {
+         friendArea.html(data);
+         friendArea.attr('onclick',"manageFriendStatus("+user1+","+user2+",'unfriend')");
+       });
+     } else if(action === 'cancel_request') {
+       $.get(base+'/ajax/manageFriendStatus.php?user1='+user1+'&user2='+user2+'&action=cancel_request', function(data) {
+         friendArea.html(data);
+         friendArea.attr('onclick',"manageFriendStatus("+user1+","+user2+",'send_request')");
+       });
+     }
 }
 
 function deletePhoto(photo_id) {

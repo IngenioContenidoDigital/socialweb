@@ -63,18 +63,6 @@ if($_FILES['photo_file']['name']) {
     $success = true;
 }
 
-if ($_SERVER['REQUEST_METHOD'] == 'POST'){
-    echo '<br>
-    <div class="row">
-        <div class="col-lg-12">
-        <div class="container">';
-    if($success){        
-        echo '<div class="alert alert-success">Image uploaded succefully</div>';
-    }else{
-        echo '<div class="alert alert-danger">'.$error_msg.'</div>';
-    }   
-    echo '</div></div></div>';
-}
 
 if(isset($_GET['delete']) && isset($_GET['delid'])) {
 	$delid = $_GET['delid'];
@@ -99,5 +87,17 @@ $photos.= " $limit";
 $photos = $db->query($photos);
 
 require('../inc/admin/top.php');
+if ($_SERVER['REQUEST_METHOD'] == 'POST'){
+    echo '<br><section id="page-content">
+    <div class="row">
+        <div class="col-lg-12">
+        <div class="container">';
+    if($success){        
+        echo '<div class="alert alert-success">Image uploaded succefully</div>';
+    }else{
+        echo '<div class="alert alert-danger">'.$error_msg.'</div>';
+    }   
+    echo '</div></div></div></section>';
+}
 require('../layout/admin/photos.php');
 require('../inc/admin/bottom.php');

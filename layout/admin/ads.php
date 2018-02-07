@@ -5,32 +5,47 @@
 
         <div class="row">
             <div class="col-lg-12">
+                <?php //if($pages->num_rows >= 1) { ?>
+                <table class="table table-responsive table-inverse">
+                 <thead>
+                    <th style="text-align:center;"> Encounter </th>
+                    <th style="text-align:center;"> Name </th>
+                    <th style="text-align:center;"> Email </th>
+                    <th style="text-align:center;"> Requests </th>
+                    <th style="text-align:center;"> On Date </th>
+                    <th style="text-align:center;"> Status </th>
+                    <th style="text-align:center;"> Options </th>
+                </thead>
+                <tbody>
+                    <?php while($encounter = $encounters->fetch_object()) { ?>
+                    <tr>
+                        <td style="vertical-align:middle;width:100px;text-align:center;"> <?=$encounter->id?> </td>
+                        <td style="vertical-align:middle;text-align:center;"> <?=$encounter->full_name?> </td>
+                        <td style="vertical-align:middle;text-align:center;"><?=$encounter->email?></td>
+                        <td style="vertical-align:middle;text-align:center;"> <?=$encounter->requests?> </td>
+                        <td style="vertical-align:middle;text-align:center;"> <?=$encounter->encounter_date?> </td>
+                        <td style="vertical-align:middle;text-align:center;"> <?php
+                            if($encounter->accepted==1){
+                                echo 'Approved';
+                            }else{
+                                echo 'Pending';
+                            }
+                        ?> </td>
+                        <td style="vertical-align:middle;text-align:center;">
+                            <a href="<?=$system->getDomain()?>/ajax/adminEncounters.php?encounter=<?=$encounter->id?>&user1=<?=$encounter->user1?>&user2=<?=$encounter->user2?>" class="btn btn-theme"> <i class="fa fa-heart" style="color:#fff;"></i> </a> 
+                            <!--<a href="edit-page.php?id=<?//=$page->id?>" class="btn btn-theme"> <i class="fa fa-pencil" style="color:#fff;"></i> </a> -->
+                            <a href="?delete=true&delid=<?//=$page->id?>" class="btn btn-theme"> <i class="fa fa-trash" style="color:#fff;"></i> </a>
+                        </td>
+                    </tr>
+                    <? } ?>
+                </tbody>
+            </table>
+            <? //} ?>
 
-                <form action="" method="post">
-                    <div class="panel panel-inverse rounded shadow">
-                        <div class="panel-heading text-white">
-                            <div class="pull-left">
-                                <h3 class="panel-title text-special">Ads</h3>
-                            </div>
-                            <div class="clearfix"></div>
-                        </div>
-                        <div class="panel-body">
-                            <div class="form-group">
-                                <label class="font600">Ad Slot - Landing Page</label>
-                                <textarea name="ad_1" class="form-control"><?=$ads->ad_1?></textarea>
-                            </div>
-                            <div class="form-group">
-                                <label class="font600">Ad Slot - Profile Page</label>
-                                <textarea name="ad_2" class="form-control"><?=$ads->ad_2?></textarea>
-                            </div>  
-                            Leave a specific ad slot empty if you don't want to use it
-                            <br><br>
-                            <input type="submit" name="save" class="btn btn-theme" value="Save">
-                        </div>
-                    </div>
-                </div>
+        </div>
+    </div>
 
-            </div>
-            <!--/ End body content -->
+</div>
+<!--/ End body content -->
 
-        </section>
+</section>

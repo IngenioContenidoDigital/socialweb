@@ -25,8 +25,10 @@ if(empty($last_chatted)) {
 	<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport'>
     <meta name="viewport" content="width=device-width" />
     <title><?=$page['name']?></title>
+    
     <link rel="shortcut icon" type="image/png" href="<?=$system->getDomain()?>/img/favicon.png">
     <!-- Plugins -->
+
     <link href="<?=$system->getDomain()?>/assets/bootstrap3/css/bootstrap.css" rel="stylesheet">
     <link href="<?=$system->getDomain()?>/assets/css/bxslider.css" rel="stylesheet">
     <link href="<?=$system->getDomain()?>/assets/css/lightslider.min.css" rel="stylesheet">
@@ -49,11 +51,12 @@ if(empty($last_chatted)) {
     <link href="<?=$system->getDomain()?>/assets/css/icomoon.css" rel="stylesheet" type="text/css" />
     <link href="<?=$system->getDomain()?>/assets/css/themify-icons.css" rel="stylesheet" type="text/css" />
     <?=$page['css']?>
+    
     <script>
-    var base = '<?=$system->getDomain()?>';
-    var showControls = <?php if(empty($photos)) { echo 'false'; } else { echo 'true'; } ?>;
-    var last_chatted = <?=$last_chatted?>;
-    var random_chat = '<?=$random_chat?>';
+        var base = '<?=$system->getDomain()?>';
+        var showControls = <?php if(empty($photos)) { echo 'false'; } else { echo 'true'; } ?>;
+        var last_chatted = <?=$last_chatted?>;
+        var random_chat = '<?=$random_chat?>';
     </script>
 </head>
 <body>
@@ -83,14 +86,14 @@ if(empty($last_chatted)) {
                 <?=$lang['People']?>
             </a>
         </li>
-        <li>
+        <!--<li>
             <a href="#" data-toggle="modal" data-target="#messages" style="outline:none;">
                 <?=$lang['Messages']?>
             </a>
-        </li>
+        </li>-->
     </ul>
     <ul class="nav navbar-nav navbar-right">
-        <li>
+        <!--<li>
             <a href="<?=$system->getDomain()?>/vip" class="btn btn-icon btn-sm btn-warning btn-fill">
                 <i class="ti-crown" style="padding-right:3px;"></i>
                 VIP
@@ -101,7 +104,7 @@ if(empty($last_chatted)) {
                 <i class="ti-server" style="padding-right:3px;"></i>
                 <?=$lang['Credits']?>
             </a>
-        </li>
+        </li>-->
         <li class="dropdown">
             <a class="btn btn-sm btn-danger btn-fill notification-count" data-toggle="dropdown">
                 <?=$ucount?>
