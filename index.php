@@ -107,7 +107,7 @@ if(isset($_POST['login'])) {
   $db->query("UPDATE users SET last_login=UNIX_TIMESTAMP(),ip='".$ip."',longitude='".$longitude."',latitude='".$latitude."' WHERE email='".$email."'");
 
   if($user['updated_preferences'] == 1) {
-    header('Location: '.$domain.'/encounters');
+    header('Location: '.$domain.'/people');
     exit;
   } else {
     header('Location: '.$domain.'/wizard');
@@ -139,10 +139,10 @@ if(!isset($_SESSION['language'])) {
 $path = 'languages/'.strtolower($language).'/language.php';
 require($path);
 
-if(isset($_GET['login'])) {
-  $current = '?login';
-} elseif(isset($_GET['register'])) {
+if(isset($_GET['register'])) {
   $current = '?register';
+} else/*if(isset($_GET['login'])) */{
+  $current = '?login';
 }
 if(isset($_GET['login']) || isset($_GET['register'])) {
   $combine = '&';
@@ -218,15 +218,15 @@ $ad = $ads->fetch_object();
                 </ul>
               </div>
             </li>
-            <?php if(!isset($_GET['login'])) { ?>
+            <?php if(!isset($_GET['register'])) { ?>
+            <!--<li>
+              <a href="<?=$system->getDomain()?>/index.php?register"><?=$lang['index_2']?></a>
+            </li>-->
+            <?php } else { ?>
             <li>
               <a href="<?=$system->getDomain()?>/index.php?login"><?=$lang['index_3']?></a>
             </li>
-            <? } else { ?>
-            <li>
-              <a href="<?=$system->getDomain()?>/index.php?register"><?=$lang['index_2']?></a>
-            </li>
-            <? } ?>
+            <?php } ?>
           </ul>
         </div>
         <!-- /.navbar-collapse -->
@@ -251,7 +251,16 @@ $ad = $ads->fetch_object();
       </form>
       * -->
       <div class="well">
-        <?php if(!isset($_GET['login'])) { ?>
+        <?php if(!isset($_GET['register'])) { ?>
+        <div class="form-title"><?=$lang['index_4']?></div>
+        <div class="clearfix"></div>
+        <?php if(isset($error)) { echo '<div class="alert alert-warning">'.$error.'</div>'; } ?>
+        <form action="" method="post">
+          <input type="text" name="email" placeholder="<?=$lang['Email']?>" class="form-control" required> <br>
+          <input type="password" name="password" placeholder="<?=$lang['Password']?>" class="form-control" required> <br>
+          <input type="submit" name="login" class="btn btn-danger btn-fill btn-block" value="<?=$lang['index_3']?>">
+        </form>
+        <?php } else { ?>
         <div class="form-title"><?=$lang['index_2']?></div>
         <div class="clearfix"></div>
         <form action="" method="post">
@@ -271,16 +280,7 @@ $ad = $ads->fetch_object();
           </select> <br>
           <input type="submit" name="register" class="btn btn-danger btn-fill btn-block" value="<?=$lang['index_7']?>">
         </form>
-        <? } else { ?>
-        <div class="form-title"><?=$lang['index_4']?></div>
-        <div class="clearfix"></div>
-        <?php if(isset($error)) { echo '<div class="alert alert-warning">'.$error.'</div>'; } ?>
-        <form action="" method="post">
-          <input type="text" name="email" placeholder="<?=$lang['Email']?>" class="form-control" required> <br>
-          <input type="password" name="password" placeholder="<?=$lang['Password']?>" class="form-control" required> <br>
-          <input type="submit" name="login" class="btn btn-danger btn-fill btn-block" value="<?=$lang['index_3']?>">
-        </form>
-        <? } ?>
+        <?php } ?>
       </div>
     </div>
     <!-- * <div class="counter"> <? /* number_format($users_count->num_rows) */ ?> <span>users</span> </div>* -->

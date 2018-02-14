@@ -29,7 +29,7 @@ if($check->num_rows >= 1) {
 
   $error = false;
 
-  header('Location: encounters.php');
+  header('Location: people.php');
   
 } else {
 
