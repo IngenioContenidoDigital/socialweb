@@ -1,11 +1,11 @@
 <?php
-	$domain = 'http://socialweb.localhost';
+	$domain = 'http://ag1725ag.com';
 
 	// Database Configuration
-	$_db['host'] = 'localhost:3808';
-	$_db['user'] = 'socialweb';
-	$_db['pass'] = 'X0tr.u21';
-	$_db['name'] = 'socialweb';
+	$_db['host'] = 'localhost';
+	$_db['user'] = 'ag1725ag';
+	$_db['pass'] = 'I7JyA6yemkSJIF1';
+	$_db['name'] = 'ag1725ag';
 
 	$site_name = 'Social Web';
 	$meta['keywords'] = '';
