@@ -18,7 +18,7 @@ $page['name'] = 'User Generator';
 
 $user = $system->getUserInfo($_SESSION['user_id']);
 
-if(!$auth->isLogged() || $user->is_admin != 1) {
+if(!$auth->isLogged() || ($user->is_admin != 1 || $user->is_admin != 3)) {
 	header('Location: index.php');
 	exit;
 }

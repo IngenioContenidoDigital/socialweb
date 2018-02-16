@@ -42,6 +42,9 @@
                             <select name="is_admin" class="form-control">
                                 <option value="0"><?=$lang['type_user']?></option>
                                 <option value="2"><?=$lang['type_customer']?></option>
+                                <?php if ($user->is_admin==3){?>
+                                    <option value="1"><?=$lang['type_admin']?></option>
+                                <?php }?>
                             </select>
                         </div>
                     </div>

@@ -257,3 +257,4 @@ $lang["Me"] = "Mi Perfil";
 $lang["type"] = "Tipo de usuario";
 $lang["type_customer"] = "Cliente";
 $lang["type_user"] = "Usuario";
+$lang["type_admin"] = "Administrador";

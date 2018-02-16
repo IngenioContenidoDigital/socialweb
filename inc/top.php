@@ -139,7 +139,7 @@ if(empty($last_chatted)) {
                 <li><a href="<?=$system->getDomain()?>/visitors"><?=$lang['Profile_Visitors']?></a></li>-->
                 <li><a href="<?=$system->getDomain()?>/settings"><?=$lang['Settings']?></a></li>
                 <?php 
-                if($user->is_admin == 1) {
+                if($user->is_admin == 1 || $user->is_admin == 3) {
                     echo '<li class="divider"></li>';
                     echo '<li><a href="'.$system->getDomain().'/admin">'.$lang['Admin'].'</a></li>';
                     echo '<li class="divider"></li>';
