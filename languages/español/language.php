@@ -254,3 +254,6 @@ $lang["Invalid_Credentials"] = "Credenciales no v&aacute;lidas";
 $lang["Verify_Email_Help"] = "Hemos enviado un email a <b> %s </b> <br> siga las instrucciones en su email para verificar la cuenta"; // don"t translate %s
 $lang["Resend_Email"] = "Reenviar email";
 $lang["Me"] = "Mi Perfil";
+$lang["type"] = "Tipo de usuario";
+$lang["type_customer"] = "Cliente";
+$lang["type_user"] = "Usuario";

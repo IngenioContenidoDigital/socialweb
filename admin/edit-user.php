@@ -54,22 +54,9 @@ if(isset($_POST['save'])) {
 		$password = $user->password;
 	} else {
 		$password = $auth->hashPassword($password);	
-	}	
-
-	$db->query("
-		UPDATE users SET 
-		email='".$email."',
-		full_name='".$full_name."',
-		bio='".$bio."',
-		password='".$password."',
-		gender='".$gender."',
-		credits='".$credits."',
-		country='".$country."',
-		city='".$city."',
-		age='".$age."',
-		is_admin='".$is_admin."'
-		WHERE id='".$id."'"
-		);
+	}
+                
+	$db->query("UPDATE users SET email='".$email."', full_name='".$full_name."', bio='".$bio."', password='".$password."', gender='".$gender."', credits='".$credits."', country='".$country."', city='".$city."', age='".$age."', is_admin='".$is_admin."' WHERE id='".$id."'");
 
 	header('Location: users.php?success');
 	exit;

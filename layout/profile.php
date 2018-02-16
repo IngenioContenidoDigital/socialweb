@@ -15,13 +15,13 @@
               <?php $system->getUserBadges($profile); ?>
             </div>
             <?php if($profile->id != $user->id) { ?>
-            <div class="profile-controls pull-right">
+            <!--<div class="profile-controls pull-right">
               <a href="#" class="btn btn-default btn-icon profile-control" onclick="messageUser(<?=$profile->id?>); return false;">
                 <i class="icon icon-bubble"></i> <span><?=$lang['Chat_Now']?></span>
               <a href="#" class="btn btn-default btn-icon profile-control" data-toggle="modal" data-target="#send-gift">
                 <i class="icon icon-gift"></i>
               </a>
-            </div>
+            </div>-->
             <? } ?>
             <br>
           </div>

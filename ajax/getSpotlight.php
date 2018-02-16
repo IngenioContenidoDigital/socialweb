@@ -12,9 +12,15 @@ $system->db = $db;
 
 $user = $system->getUserInfo($_SESSION['user_id']);
 
-$spotlight_users = $db->query("SELECT * FROM users WHERE is_increased_exposure='1' OR vip_expiration >= UNIX_TIMESTAMP() ORDER BY RAND() LIMIT 20");
+if ($user->is_admin==2){
+    $spotlight_users = $db->query("SELECT * FROM users WHERE is_admin=0 ORDER BY RAND() LIMIT 20");
+}elseif($user->is_admin==0){
+    $spotlight_users = $db->query("SELECT * FROM users WHERE id=".$user->id." ORDER BY RAND() LIMIT 20");
+}else{
+    $spotlight_users = $db->query("SELECT * FROM users WHERE id!=".$user->id." ORDER BY RAND() LIMIT 20");
+}
 
-if($user->is_increased_exposure == 0) {
+/*if($user->is_increased_exposure == 0) {
 	echo '
 	<li>
 	<a href="'.$system->getDomain().'/credits">
@@ -29,7 +35,7 @@ if($user->is_increased_exposure == 0) {
 	</a>
 	</li>
 	';
-}
+}*/
 while($spotlight_user = $spotlight_users->fetch_object()) { 
 	echo '
 	<li>

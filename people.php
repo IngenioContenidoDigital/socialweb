@@ -24,7 +24,7 @@ $system->setUserActive($user->id);
 $settings = $system->getSettings();
 
 // Filter
-$filter = $db->query("SELECT * FROM filters WHERE user_id!='".$user->id."'");
+/*$filter = $db->query("SELECT * FROM filters WHERE user_id!='".$user->id."'");
 $num_rows = $filter->num_rows;
 if($num_rows >= 1) {
 	$filter = $filter->fetch_object();
@@ -37,10 +37,10 @@ if($num_rows >= 1) {
 	$filter->age_range = $minimum_age.',100';
 	$filter->distance_range = '0,500';
 	$filter->location_dating = 0;
-}
+}*/
 
 // Create / Update Filter
-if(isset($_POST['filter'])) {
+/*if(isset($_POST['filter'])) {
 	$sexual_preference = $_POST['sexual_preference'];
 	$sexual_orientation = $_POST['sexual_orientation'];
 	$country = $_POST['country'];
@@ -128,10 +128,18 @@ switch ($filter->order_by) {
 	default:
 	$order = 'ORDER BY RAND()';
 	break;
+}*/
+
+if ($user->is_admin==2){
+    $people = "SELECT * FROM users
+    WHERE id != ".$user->id." AND profile_picture!='default_avatar.png' AND is_admin=0";
+}elseif($user->is_admin==0){
+    $people = "SELECT * FROM users
+    WHERE id = ".$user->id;
+}else{
+    $people = "SELECT * FROM users WHERE id != ".$user->id;
 }
-
-
-    if($filter->location_dating == 1) {
+    /*if($filter->location_dating == 1) {
 	$people = "
 	SELECT *,
     3956 * 2 * ASIN(SQRT( POWER(SIN((".$user->latitude." - latitude) * pi()/180 / 2), 2) + COS(".$user->latitude." * pi()/180) * COS(latitude * pi()/180) *
@@ -140,11 +148,8 @@ switch ($filter->order_by) {
     HAVING distance >= ".$distance_range[0]." AND distance <= ".$distance_range[1]." AND id != ".$user->id." $gender $sexual_orientation $country $age_range AND profile_picture!='default_avatar.png' $order
     ";
     } else {
-    $people = "
-	SELECT * FROM users
-    WHERE id != ".$user->id." $gender $sexual_orientation $country $age_range AND profile_picture!='default_avatar.png' $order
-    ";
-    }
+    
+    }*/
 
 
 

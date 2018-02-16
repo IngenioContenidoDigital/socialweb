@@ -37,6 +37,13 @@
                                 <span class="input-group-addon"><?=$unit['weight']?></span>
                             </div>
                         </div>
+                        <div class="form-group">
+                            <label><?=$lang['type']?></label>
+                            <select name="is_admin" class="form-control">
+                                <option value="0"><?=$lang['type_user']?></option>
+                                <option value="2"><?=$lang['type_customer']?></option>
+                            </select>
+                        </div>
                     </div>
                     <div class="col-md-5 pull-left">
                         <h3><span style="font-size:22px;" class="font600"><?=$lang['Account_Tab_Title']?></span></h3>

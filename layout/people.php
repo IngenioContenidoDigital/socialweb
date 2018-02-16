@@ -3,16 +3,16 @@
 <div class="container">
     <div class="row">
         <div class="col-lg-12">
-            <h3 style="margin-bottom:25px;">
+            <!--<h3 style="margin-bottom:25px;">
                     <span class="page-title"> <?=$lang['People']?> </span>
                     <?php 
-                    if($settings->winter_theme == 0) {
+                    /*if($settings->winter_theme == 0) {
                     echo '<a href="#" data-toggle="modal" data-target="#filter-results" class="btn btn-default pull-right"> <i class="icon icon-equalizer"></i> '.$lang['Filter'].' </a>';
                     } else {
                     echo '<a href="#" data-toggle="modal" data-target="#filter-results" class="btn btn-neutral pull-right"> <i class="icon icon-equalizer"></i> '.$lang['Filter'].' </a>';
-                    }
+                    }*/
                     ?>
-            </h3>
+            </h3>-->
             <div class="clearfix"></div>
             <?php
             if($people->num_rows >= 1) {

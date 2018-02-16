@@ -38,6 +38,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     //$new_password = trim($_POST['new_password']);
     //$confirm_new_password = trim($_POST['confirm_new_password']);
     $website_language = $_POST['website_language'];
+    $is_admin = $_POST["is_admin"];
     $time = time();
     $error_msg="";
     $error = false;
@@ -47,7 +48,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     if($check_d == 0) {
         $sql="INSERT INTO users "
                 . "(full_name, email, country, city, age, bio, gender, sexual_interest, registered, is_admin, is_verified, has_disabled_ads, language, height, weight) "
-                . "VALUES ('$full_name','$email', '".$country."' ,'$city','$age','$bio','$gender','$sexual_orientation','".$time."',0,1,1,'$website_language','$height','$weight')";
+                . "VALUES ('$full_name','$email', '".$country."' ,'$city','$age','$bio','$gender','$sexual_orientation','".$time."','".$is_admin."',1,1,'$website_language','$height','$weight')";
         $db->query($sql);
         $new_user = mysqli_insert_id($db);
         if($_FILES['profile_photo']['name']) {

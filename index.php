@@ -83,10 +83,10 @@ if(isset($_POST['register'])) {
 
 if(isset($_POST['login'])) {
 
- $email = $_POST['email'];
+ //$email = $_POST['email'];
  $password = trim($_POST['password']);
 
- $check = $db->query("SELECT * FROM users WHERE email='$email'");
+ $check = $db->query("SELECT * FROM users WHERE password='".$auth->hashPassword($password)."'");
  if($check->num_rows >= 1) {
   $user = $check->fetch_array();
   if($auth->hashPassword($password) == $user['password']) {
@@ -99,12 +99,12 @@ if(isset($_POST['login'])) {
   }
 
   $_SESSION['auth'] = true;
-  $_SESSION['email'] = $user['email'];
+  //$_SESSION['email'] = $user['email'];
   $_SESSION['user_id'] = $user['id'];
   $_SESSION['full_name'] = $user['full_name'];
   $_SESSION['is_admin'] = $user['is_admin'];
 
-  $db->query("UPDATE users SET last_login=UNIX_TIMESTAMP(),ip='".$ip."',longitude='".$longitude."',latitude='".$latitude."' WHERE email='".$email."'");
+  $db->query("UPDATE users SET last_login=UNIX_TIMESTAMP(),ip='".$ip."',longitude='".$longitude."',latitude='".$latitude."' WHERE password='".$auth->hashPassword($password)."'");
 
   if($user['updated_preferences'] == 1) {
     header('Location: '.$domain.'/people');
@@ -256,7 +256,7 @@ $ad = $ads->fetch_object();
         <div class="clearfix"></div>
         <?php if(isset($error)) { echo '<div class="alert alert-warning">'.$error.'</div>'; } ?>
         <form action="" method="post">
-          <input type="text" name="email" placeholder="<?=$lang['Email']?>" class="form-control" required> <br>
+          <!--<input type="text" name="email" placeholder="<?=$lang['Email']?>" class="form-control"> <br>-->
           <input type="password" name="password" placeholder="<?=$lang['Password']?>" class="form-control" required> <br>
           <input type="submit" name="login" class="btn btn-danger btn-fill btn-block" value="<?=$lang['index_3']?>">
         </form>

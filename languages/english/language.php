@@ -254,3 +254,6 @@ $lang["Invalid_Credentials"] = "Invalid Credentials";
 $lang["Verify_Email_Help"] = "We have sent an email to <b> %s </b> <br> Follow the instructions in the email to verify your account"; // don"t translate %s
 $lang["Resend_Email"] = "Resend email";
 $lang["Me"] = "My Profile";
+$lang["type"] = "User Type";
+$lang["type_customer"] = "Customer";
+$lang["type_user"] = "User";

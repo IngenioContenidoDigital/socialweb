@@ -70,7 +70,7 @@ if(empty($last_chatted)) {
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="#"><img src="<?=$system->getDomain()?>/img/logo-small.png"></a>
+        <!--<a class="navbar-brand" href="#"><img src="<?=$system->getDomain()?>/img/logo-small.png"></a>-->
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
@@ -135,8 +135,8 @@ if(empty($last_chatted)) {
             </a>
             <ul class="dropdown-menu dropdown-menu-right">
                 <li><a href="<?=$system->getDomain()?>/user/<?=$user->id?>"><?=$lang['Me']?></a></li>
-                <li><a href="<?=$system->getDomain()?>/likes"><?=$lang['Profile_Likes']?></a></li>
-                <li><a href="<?=$system->getDomain()?>/visitors"><?=$lang['Profile_Visitors']?></a></li>
+                <!--<li><a href="<?=$system->getDomain()?>/likes"><?=$lang['Profile_Likes']?></a></li>
+                <li><a href="<?=$system->getDomain()?>/visitors"><?=$lang['Profile_Visitors']?></a></li>-->
                 <li><a href="<?=$system->getDomain()?>/settings"><?=$lang['Settings']?></a></li>
                 <?php 
                 if($user->is_admin == 1) {
