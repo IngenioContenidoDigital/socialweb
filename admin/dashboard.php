@@ -17,7 +17,7 @@ $page['name'] = 'Dashboard';
 $user = $system->getUserInfo($_SESSION['user_id']);
 $system->setUserActive($user->id);
 
-if(!$auth->isLogged() || ($user->is_admin != 1 || $user->is_admin != 3)) {
+if(!$auth->isLogged() || $user->is_admin != 1) {
 	header('Location: index.php');
 	exit;
 }
