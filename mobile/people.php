@@ -66,7 +66,7 @@ $system->setUserActive($user->id);
               </div>
               <div class="nav-menu-titles"><?=$lang['Messages']?></div>
             </a>
-            <a class="w-clearfix w-inline-block nav-menu-link" href="visitors.php" data-load="1">
+            <!--<a class="w-clearfix w-inline-block nav-menu-link" href="visitors.php" data-load="1">
               <div class="icon-list-menu">
                 <div class="icon ion-eye"></div>
               </div>
@@ -77,7 +77,7 @@ $system->setUserActive($user->id);
                 <div class="icon ion-heart"></div>
               </div>
               <div class="nav-menu-titles"><?=$lang['Likes']?></div>
-            </a>
+            </a>-->
             <a class="w-clearfix w-inline-block nav-menu-link" href="settings.php" data-load="1">
               <div class="icon-list-menu">
                 <div class="icon ion-ios-gear"></div>
@@ -103,13 +103,13 @@ $system->setUserActive($user->id);
               <div class="bar-home-icon"></div>
             </div>
           </div>
-          <div class="navbar-button right filter-button" id="filter-button">
+          <!--<div class="navbar-button right filter-button" id="filter-button">
             <a href="filter.php" data-load="1">
               <div class="navbar-button-icon">
                 <div class="ion-ios-settings"></div>
               </div>
             </a>
-          </div>
+          </div>-->
         </div>
       </div>
       <div class="body">

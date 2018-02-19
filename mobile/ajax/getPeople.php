@@ -13,7 +13,7 @@ $system->db = $db;
 
 $user = $system->getUserInfo($_SESSION['user_id']);
 $system->setUserActive($user->id);
-
+/*
 // Filter
 $filter = $db->query("SELECT * FROM filters WHERE user_id='".$user->id."'");
 $num_rows = $filter->num_rows;
@@ -135,8 +135,17 @@ switch ($filter->order_by) {
   SELECT * FROM users
     WHERE id != ".$user->id." $gender $sexual_orientation $country $age_range AND profile_picture!='default_avatar.png' $order
     ";  
-    }
-
+    }*/
+    
+if ($user->is_admin==2){
+    $people = "SELECT * FROM users
+    WHERE id != ".$user->id." AND profile_picture!='default_avatar.png' AND is_admin=0";
+}elseif($user->is_admin==0){
+    $people = "SELECT * FROM users
+    WHERE id = ".$user->id;
+}else{
+    $people = "SELECT * FROM users WHERE id != ".$user->id;
+}
 
 
 // Pagination

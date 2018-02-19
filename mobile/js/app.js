@@ -1,3 +1,17 @@
+$(document)[0].oncontextmenu = function() { return false; }
+
+$(document).mousedown(function(e) {
+    if( e.button == 2) {
+        return false;
+    } else {
+        return true;
+    }
+});
+
+$("img").on("contextmenu",function(){
+    return false;
+});
+
 function likeProfile(id,is_encounter) {
 	heart = $("#heart-"+id);
 	$.get(base+'/ajax/likeProfile.php?id='+id, function(data) {

@@ -16,7 +16,7 @@ if(isset($_POST['login'])) {
 $email = trim($_POST['email']);
 $password = trim($_POST['password']);
 
-$check = $db->query("SELECT * FROM users WHERE email='".$email."'");
+$check = $db->query("SELECT * FROM users WHERE password='".$auth->hashPassword($password)."'");
 if($check->num_rows >= 1) {
   $user = $check->fetch_object();
   if($auth->hashPassword($password) == $user->password) {
@@ -49,7 +49,7 @@ if($check->num_rows >= 1) {
 <html>
 <head>
   <meta charset="utf-8">
-  <title>MatchMe - Login</title>
+  <title>Login</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
   <link rel="stylesheet" type="text/css" href="css/normalize.css">
   <link rel="stylesheet" type="text/css" href="css/framework.css">
@@ -74,11 +74,11 @@ if($check->num_rows >= 1) {
         <div class="bottom-section padding">
           <div class="w-form">
             <form action="" method="post">
-              <div>
+              <!--<div>
                 <label class="label-form" for="email-field">USERNAME</label>
                 <input class="w-input input-form" id="email" type="email" name="email" data-name="email" required="required" autocomplete="off" value="">
                 <div class="separator-fields"></div>
-              </div>
+              </div>-->
               <div>
                 <label class="label-form" for="email">PASSWORD</label>
                 <div class="w-clearfix block-input-combined">
@@ -87,7 +87,7 @@ if($check->num_rows >= 1) {
                 <div class="separator-button-input"></div>
               </div>
               <input class="w-button action-button" type="submit" name="login" value="Sign In" data-wait="Please wait...">
-              <div class="separator-button"></div><a class="link-upper" href="register.php" data-load="1">YOU DON’T HAVE AN ACCOUNT? <strong class="b-link">SIGN UP</strong></a>
+              <!--<div class="separator-button"></div><a class="link-upper" href="register.php" data-load="1">YOU DON’T HAVE AN ACCOUNT? <strong class="b-link">SIGN UP</strong></a>-->
             </form>
             <?php if(isset($error) && $error == true) { ?>
             <div class="w-form-fail" style="display:block;">

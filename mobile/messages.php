@@ -69,7 +69,7 @@ $occurrences = array();
               </div>
               <div class="nav-menu-titles"><?=$lang['Messages']?></div>
             </a>
-            <a class="w-clearfix w-inline-block nav-menu-link" href="visitors.php" data-load="1">
+            <!--<a class="w-clearfix w-inline-block nav-menu-link" href="visitors.php" data-load="1">
               <div class="icon-list-menu">
                 <div class="icon ion-eye"></div>
               </div>
@@ -80,7 +80,7 @@ $occurrences = array();
                 <div class="icon ion-heart"></div>
               </div>
               <div class="nav-menu-titles"><?=$lang['Likes']?></div>
-            </a>
+            </a>-->
             <a class="w-clearfix w-inline-block nav-menu-link" href="settings.php" data-load="1">
               <div class="icon-list-menu">
                 <div class="icon ion-ios-gear"></div>
