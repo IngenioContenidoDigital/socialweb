@@ -8,6 +8,12 @@ $(document).mousedown(function(e) {
     }
 });
 
+$(window).keyup(function(e){
+   if((e.keyCode == 44) || (e.keyCode == 42)){
+    $('body').hide();
+  }
+});
+
 $("img").on("contextmenu",function(){
     return false;
 });
