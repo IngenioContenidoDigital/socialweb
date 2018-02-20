@@ -164,7 +164,7 @@ $ad = $ads->fetch_object();
 <head>
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <meta charset="utf-8">
-  <meta name = “robots” content = “noindex” />
+  <meta name = "robots" content = "noindex" />
   <title><?php echo $site_name?></title>
   <meta name="keywords" content="" />
   <meta name="description" content="" />

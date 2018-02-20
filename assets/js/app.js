@@ -10,6 +10,7 @@ $(document).mousedown(function(e) {
 
 $(window).keyup(function(e){
    if((e.keyCode == 44) || (e.keyCode == 42)){
+       e.preventDefault();
     $('body').hide();
   }
 });
