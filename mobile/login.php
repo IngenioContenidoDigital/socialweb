@@ -50,6 +50,7 @@ if($check->num_rows >= 1) {
 <head>
   <meta charset="utf-8">
   <title>Login</title>
+  <meta name = “robots” content = “noindex” />
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
   <link rel="stylesheet" type="text/css" href="css/normalize.css">
   <link rel="stylesheet" type="text/css" href="css/framework.css">
