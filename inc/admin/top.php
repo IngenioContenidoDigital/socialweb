@@ -74,7 +74,7 @@
 
 <!-- Start brand -->
 <a class="navbar-brand" href="dashboard.php">
-<img class="logo" src="<?=$system->getDomain()?>/img/logo-small.png">
+<!--<img class="logo" src="<?=$system->getDomain()?>/img/logo-small.png">-->
 </a><!-- /.navbar-brand -->
 <!--/ End brand -->
 
@@ -113,7 +113,7 @@
 <ul class="nav navbar-nav navbar-right"><!-- /.nav navbar-nav navbar-right -->
 
 <li> 
-<a href="<?=$system->getDomain()?>/encounters" style="background:none;"> <b> <i class="fa fa-fw fa-chevron-left"></i> Back </b> </a>
+<a href="<?=$system->getDomain()?>/" style="background:none;"> <b> <i class="fa fa-fw fa-chevron-left"></i> Back </b> </a>
 </li>
 
 <!-- Start profile -->

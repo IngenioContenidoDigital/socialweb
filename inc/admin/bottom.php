@@ -12,6 +12,7 @@
 <!-- START @GLOBAL MANDATORY SCRIPTS -->
 <script src="<?=$system->getDomain()?>/assets/admin/js/apps.js"></script>
 <!--/ END @GLOBAL MANDATORY SCRIPTS -->
+<script src="<?=$system->getDomain()?>/assets/admin/js/admin.js"></script>
 
 <script>
 $('.chosen').each(function(){  

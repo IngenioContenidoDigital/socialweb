@@ -66,12 +66,14 @@ $system->setUserActive($user->id);
               </div>
               <div class="nav-menu-titles"><?=$lang['Messages']?></div>
             </a>
-            <!--<a class="w-clearfix w-inline-block nav-menu-link" href="visitors.php" data-load="1">
+            <?php if($user->is_admin==1 || $user->is_admin==3){ ?>
+            <a class="w-clearfix w-inline-block nav-menu-link" href="/admin" data-load="1">
               <div class="icon-list-menu">
                 <div class="icon ion-eye"></div>
               </div>
-              <div class="nav-menu-titles"><?=$lang['Visitors']?></div>
+              <div class="nav-menu-titles"><?=$lang["Admin"]?></div>
             </a>
+            <?php } ?>
             <a class="w-clearfix w-inline-block nav-menu-link" href="likes.php" data-load="1">
               <div class="icon-list-menu">
                 <div class="icon ion-heart"></div>

@@ -42,7 +42,7 @@
           <th style="text-align:center;"> # </th>
           <th style="text-align:center;"> Photo </th>
           <th style="text-align:center;"> Uploaded By </th>
-          <th style="text-align:center;"> Imported from Instagram </th>
+          <!--<th style="text-align:center;"> Imported from Instagram </th>-->
           <th style="text-align:center;"> Date </th>
           <th style="text-align:center;"> Actions </th>
         </thead>
@@ -56,7 +56,7 @@
              <a href="<?=$system->getDomain()?>/uploads/<?=$photo->path?>" target="_blank"> <img src="<?=$system->getDomain()?>/uploads/<?=$photo->path?>" style="height:100px;width:100px" data-toggle="tooltip" data-placement="bottom" data-title="Click to view in full size" placeholder="" data-original-title="" title=""> 
              </a>
              <td style="vertical-align:middle;text-align:center;"> <?=$uploader->full_name?> </td>
-             <td style="vertical-align:middle;text-align:center;"> 
+             <!--<td style="vertical-align:middle;text-align:center;"> 
               <?php
               switch ($photo->is_instagram) {
                 case 1:
@@ -67,7 +67,7 @@
                 break;
               }
               ?>
-            </td>
+            </td>-->
             <td style="vertical-align:middle;text-align:center;"> <?=date("F j, Y",$photo->time)?> </td>
             <td style="vertical-align:middle;text-align:center;">
               <a href="<?=$system->getDomain()?>/uploads/<?=$photo->path?>" target="_blank" class="btn btn-theme"> <i class="fa fa-eye" style="color:#fff;"></i> </a>

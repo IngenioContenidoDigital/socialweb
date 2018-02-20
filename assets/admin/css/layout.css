@@ -1717,8 +1717,8 @@ body.page-footer-fixed #page-content .footer-content {
 
 @media (max-width: 768px) {
   #sidebar-left {
-    top: 100px;
-    left: -220px;
+    top: 50px;
+    left: 0px;
     z-index: 9999;
     position: absolute;
   }
